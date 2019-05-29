@@ -2,6 +2,8 @@
 $(document).ready(function() {
 
   'use strict';
+  
+  
 
   // ========================================================================= //
   //  //SMOOTH SCROLL
@@ -104,7 +106,26 @@ $(document).ready(function() {
 		} 
 	  });
 	}
-
+	
+	/* When the user clicks on the button, 
+	toggle between hiding and showing the dropdown content 	
+	function dropDownMail() {
+	  document.getElementByClassName("dropdown-content").classList.toggle("showmail");
+	}
+	
+	// Close the dropdown menu if the user clicks outside of it
+	window.onclick = function(event) {
+	  if (!event.target.matches('.dropmail')) {
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+		  var openDropdown = dropdowns[i];
+		  if (openDropdown.classList.contains('showmail')) {
+			openDropdown.classList.remove('showmail');
+		  }
+		}
+	  }
+	}*/
 
   // ========================================================================= //
   //  Owl Carousel Services
