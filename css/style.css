@@ -1,0 +1,195 @@
+
+/*
+  Theme Name: Folio
+  Theme URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
+  Author: BootstrapMade.com
+  Author URL: https://bootstrapmade.com
+*/
+
+/*  General Styling
+/*-----------------------------------------------------------------------------------*/
+@media only screen and (max-width: 767px){}
+#nav-wrap > a {
+    background-color: #11abb0;
+	}
+}
+
+/*Facebook*/
+header .social li a>.fa-facebook {
+  color: inherit;
+  transition: 0.3s;
+}
+
+header .social li a>.fa-facebook:hover {
+	color: #2a5297;
+}
+
+/*Linkedin*/
+header .social li a>.fa-linkedin {
+  color: inherit;
+  transition: 0.3s;
+}
+
+header .social li a>.fa-linkedin:hover {
+	color: #0274b3;
+}
+
+/*Whatsapp*/
+header .social li a>.fa-whatsapp {
+  color: inherit;
+  transition: 0.3s;
+}
+
+header .social li a>.fa-whatsapp:hover {
+	color: #0d9f16;
+}
+
+/*E-mail*/
+header .social li .fa-envelope {
+  color: inherit;
+  transition: 0.3s;
+}
+
+header .social li .fa-envelope:hover {
+	color: #11ABB0;
+}
+
+header .social li div #live:hover {
+	color: #0071c5;
+}
+
+header .social li div #icloud:hover {
+	color: #3f73e3;
+}
+
+ul#nav li.current a { 
+	color: #11ABB0;
+	border-bottom: 2px solid;
+}
+
+ul#nav li a:hover {
+	color: #11ABB0;
+	transition: 0.3s;
+}
+
+.dropdown {
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.85);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 5px 12px;
+  text-decoration: underline;
+  display: block;
+  font-weight: inherit;
+  font: 18px/1.9em 'librebaskerville-regular', serif;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.percent {
+    color: #ccc;
+    padding: 10px;
+    margin: 82%;
+}
+
+.collapsible {
+    background-color: #313131;
+    color: #ebeeee;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+#swift {
+    border-right: 10px solid #ffac45;
+}
+
+#html {
+    border-right: 10px solid #e34c26;
+}
+
+#java {
+    border-right: 10px solid #00f;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.collapsed-btn, .collapsible:hover {
+  background-color: #525252;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+
+.content {
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-bottom: 20px;
+    margin-top: -18px;
+}
+
+.collapsible:after {
+  content: '\0254B'; /* Unicode character for "plus" sign (+) */
+  f0d8
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.collapsed-btn:after {
+  content: "\02501"; /* Unicode character for "minus" sign (-) */
+}
+
+#portfolio-wrapper .columns {
+    margin-bottom: 36px;
+	margin-top: 16px;
+}
+
+.swift .portfolio-item .item-wrap a h5 {
+    background-color: #e6e8eb;
+    border-radius: 0px 0px 5px 5px;
+    text-align: center;
+    border-bottom: 3px solid #ffac45;
+}
+
+.java .portfolio-item .item-wrap a h5 {
+    background-color: #e6e8eb;
+    border-radius: 0px 0px 5px 5px;
+    text-align: center;
+    border-bottom: 3px solid #00f;
+}
+
+.html .portfolio-item .item-wrap a h5 {
+    background-color: #e6e8eb;
+    border-radius: 0px 0px 5px 5px;
+    text-align: center;
+    border-bottom: 3px solid #e34c26;
+}
+
+.item-wrap{
+    -webkit-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+    -ms-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+    -o-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+    box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+}
+
