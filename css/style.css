@@ -12,21 +12,28 @@
 #nav-wrap > a {
     background-color: #11abb0;
 	}
+#portfolio h1 {
+    font: 25px/21px 'opensans-semibold', sans-serif! important;
+	}
+.dropdown-content a {
+    font: 16px/1.9em 'librebaskerville-regular', serif! important;
+	}
+.dropdown-content{
+	  margin-left: -118px;
+	}
 }
 
 @media only screen and (max-width: 480px){
 .dropdown-content a {
     font: 16px/1.9em 'librebaskerville-regular', serif! important;
-}
+	}
 .dropdown-content{
 	  margin-left: -118px;
 	}
 }
 
 @media only screen and (max-width: 767px) {
-.dropdown-content{
-	  margin-left: -20px;
-	}
+
 }
 
 /*Facebook*/
@@ -270,4 +277,46 @@ ul#nav li a:hover {
 #nav-wrap > a.mobile-btn {
     border-radius: 0px 0px 0px 8px;
     margin-right: -30px;
+}
+
+/* ------------------------------------------------------------------ */
+/* c. About Section
+/* ------------------------------------------------------------------ */
+
+#contact {
+   background: #2B2B2B;
+   padding-top: 96px;
+   padding-bottom: 66px;
+   overflow: hidden;
+}
+
+#contact a, #contact a:visited  { color: #fff; }
+#contact a:hover, #contact a:focus { color: #11ABB0; }
+
+#contact h2 {
+   font: 22px/30px 'opensans-bold', sans-serif;
+   color: #fff;
+   margin-bottom: 12px;
+}
+#contact p {
+   line-height: 30px;
+   color: #7A7A7A;
+}
+#contact .contact-details { width: 41.66667%; }
+#contact .download {
+   width: 58.33333%;
+   padding-top: 6px;
+}
+#contact .main-col { padding-right: 5%; }
+#contact .download .button {
+   margin-top: 6px;
+   background: #444;
+}
+#contact .download .button:hover {
+   background: #fff;
+   color: #2B2B2B;
+}
+#contact .download .button i {
+   margin-right: 15px;
+   font-size: 20px;
 }
