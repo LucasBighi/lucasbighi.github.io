@@ -354,3 +354,18 @@ ul#nav li a:hover {
     no-repeat;
 	background-size:100% 4px ; 
 }
+
+.education, .work, .skill {
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.certificate-item {
+	padding: 10px;
+}
