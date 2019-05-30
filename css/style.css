@@ -84,9 +84,20 @@ header .social li div #icloud:hover {
 	color: #3f73e3;
 }
 
-ul#nav li.current a { 
+ul#nav li.current a {
+  background:
+    linear-gradient(
+      to right, 
+      transparent,
+      #17a2b8,
+      transparent
+    )
+    left 
+    bottom
+    transparent    
+    no-repeat;
+	background-size:100% 4px ; 
 	color: #11ABB0;
-	border-bottom: 2px solid;
 }
 
 ul#nav li a:hover {
@@ -319,4 +330,27 @@ ul#nav li a:hover {
 #contact .download .button i {
    margin-right: 15px;
    font-size: 20px;
+}
+
+.divisor {
+	height: 3px;
+    background-image: linear-gradient(to right, transparent, #11abb0, transparent);
+    border: 8px;
+}
+	
+#resume h1 span {
+    border-bottom: none! important;
+    padding-bottom: 6px;
+	background:
+    linear-gradient(
+      to right, 
+      transparent,
+      #17a2b8,
+      transparent
+    )
+    left 
+    bottom
+    transparent    
+    no-repeat;
+	background-size:100% 4px ; 
 }
