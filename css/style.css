@@ -8,7 +8,7 @@
 
 /*  General Styling
 /*-----------------------------------------------------------------------------------*/
-@media only screen and (max-width: 767px){}
+@media only screen and (max-width: 767px){
 #nav-wrap > a {
     background-color: #11abb0;
 	}
@@ -32,8 +32,25 @@
 	}
 }
 
-@media only screen and (max-width: 767px) {
+header {
+    background-blend-mode: color;
+    position: relative;
+    height: 800px;
+    min-height: 500px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5) url(../images/header-background.jpg) no-repeat top center;
+    background-size: cover !important;
+    -webkit-background-size: cover !important;
+    text-align: center;
+    overflow: hidden;
+}
 
+header .banner-text h3 {
+    font: 18px/1.9em 'librebaskerville-regular', serif;
+    color: #afafaf;
+    margin: 0 auto;
+    width: 70%;
+    text-shadow: -1px 2px 1px #000000, 0px 2px 13px #f1f1f1;
 }
 
 /*Facebook*/
