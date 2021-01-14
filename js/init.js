@@ -6,10 +6,8 @@
 
  jQuery(document).ready(function($) {
 
-   const portfolioURL = 'https://api.github.com/repos/LucasBighi/IMC';
-
    function loadPortfolio() {
-       fetch(portfolioURL)
+       fetch('https://api.github.com/users/LucasBighi/repos')
        .then(response => {
            if (!response.ok) {
                throw new Error("Erro HTTP: " + response.status);
@@ -18,23 +16,27 @@
        })
        .then(json => {
            this.response = json;
-           console.log(response);
-           document.getElementById('portfolio-wrapper').innerHTML = `
-            <div class="columns portfolio-item">
-               <div class="item-wrap">
-                  <a href="#modal-swiftquiz" title="">
-                  <img alt="HTML" src="images/portfolio/swift.png">
-                  <div class="overlay">
-                  <div class="portfolio-item-meta">
-                     <p>${this.response.name}</p>
-                  </div>
-                  </div>
-                  <div class="link-icon"><i class="icon-plus"></i></div>
-                  <h5 id="${this.response.language.toLowerCase()}-item-title">${this.response.name}</h5>
-                  </a>
-               </div>
-            </div>
-            `;
+           for (i in response) {
+              var repo = response[i];
+              var div = document.createElement("div");
+              div.innerHTML = `
+              <div class="columns portfolio-item">
+                 <div class="item-wrap">
+                    <a href="${repo.html_url}" target="_blank">
+                    <img alt="HTML" src="images/portfolio/swift.png">
+                    <div class="overlay">
+                    <div class="portfolio-item-meta">
+                       <p>${repo.description}</p>
+                    </div>
+                    </div>
+                    <div class="link-icon"><i class="icon-plus"></i></div>
+                    <h5 id="${repo.language.toLowerCase()}-item-title">${repo.name}</h5>
+                    </a>
+                 </div>
+              </div>
+              `;
+              document.getElementById('portfolio-wrapper').appendChild(div);
+           }
        })
        .catch(function () {
            this.dataError = true;

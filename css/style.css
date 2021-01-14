@@ -220,6 +220,11 @@ ul#nav li a:hover {
   border-bottom: 3px solid #ffac45;
 }
 
+#java-item-title {
+  text-align: center;
+  border-bottom: 3px solid #b07219;
+}
+
 .swift-portfolio .portfolio-item .item-wrap a h5 {
     background-color: #e6e8eb;
     border-radius: 0px 0px 5px 5px;
