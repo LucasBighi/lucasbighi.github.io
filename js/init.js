@@ -23,7 +23,7 @@
               <div class="columns portfolio-item">
                  <div class="item-wrap">
                     <a href="${repo.html_url}" target="_blank">
-                    <img alt="HTML" src="images/portfolio/swift.png">
+                    <img alt="HTML" src="images/portfolio/${repo.language.toLowerCase()}.png">
                     <div class="overlay">
                     <div class="portfolio-item-meta">
                        <p>${repo.description}</p>
