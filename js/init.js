@@ -6,10 +6,10 @@
 
  jQuery(document).ready(function($) {
 
-   const searchQueryURL = 'https://api.github.com/repos/LucasBighi/IMC';
+   const portfolioURL = 'https://api.github.com/repos/LucasBighi/IMC';
 
-   function readJson() {
-       fetch(searchQueryURL)
+   function loadPortfolio() {
+       fetch(portfolioURL)
        .then(response => {
            if (!response.ok) {
                throw new Error("Erro HTTP: " + response.status);
@@ -19,16 +19,29 @@
        .then(json => {
            this.response = json;
            console.log(response);
-           //document.getElementById('avatar').src = response.name;
-           //document.getElementById('first_name').innerHTML = response.name;
-           //document.getElementById('last_name').innerHTML = response.data.last_name;
+           document.getElementById('portfolio-wrapper').innerHTML = `
+            <div class="columns portfolio-item">
+               <div class="item-wrap">
+                  <a href="#modal-swiftquiz" title="">
+                  <img alt="HTML" src="images/portfolio/swift.png">
+                  <div class="overlay">
+                  <div class="portfolio-item-meta">
+                     <p>${this.response.name}</p>
+                  </div>
+                  </div>
+                  <div class="link-icon"><i class="icon-plus"></i></div>
+                  <h5 id="${this.response.language.toLowerCase()}-item-title">${this.response.name}</h5>
+                  </a>
+               </div>
+            </div>
+            `;
        })
        .catch(function () {
            this.dataError = true;
        })
    }
    
-   readJson();
+   loadPortfolio();
 
 /*----------------------------------------------------*/
 /* FitText Settings

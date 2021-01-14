@@ -200,7 +200,6 @@ ul#nav li a:hover {
 
 .collapsible:after {
   content: '\0254B'; /* Unicode character for "plus" sign (+) */
-  f0d8
   font-size: 13px;
   color: white;
   float: right;
@@ -216,11 +215,14 @@ ul#nav li a:hover {
 	margin-top: 16px;
 }
 
+#swift-item-title {
+  text-align: center;
+  border-bottom: 3px solid #ffac45;
+}
+
 .swift-portfolio .portfolio-item .item-wrap a h5 {
     background-color: #e6e8eb;
     border-radius: 0px 0px 5px 5px;
-    text-align: center;
-    border-bottom: 3px solid #ffac45;
 }
 
 .java-portfolio .portfolio-item .item-wrap a h5 {
