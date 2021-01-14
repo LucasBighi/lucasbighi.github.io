@@ -6,6 +6,30 @@
 
  jQuery(document).ready(function($) {
 
+   const searchQueryURL = 'https://api.github.com/repos/LucasBighi/IMC';
+
+   function readJson() {
+       fetch(searchQueryURL)
+       .then(response => {
+           if (!response.ok) {
+               throw new Error("Erro HTTP: " + response.status);
+           }
+           return response.json();
+       })
+       .then(json => {
+           this.response = json;
+           console.log(response);
+           //document.getElementById('avatar').src = response.name;
+           //document.getElementById('first_name').innerHTML = response.name;
+           //document.getElementById('last_name').innerHTML = response.data.last_name;
+       })
+       .catch(function () {
+           this.dataError = true;
+       })
+   }
+   
+   readJson();
+
 /*----------------------------------------------------*/
 /* FitText Settings
 ------------------------------------------------------ */
