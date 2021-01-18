@@ -18,23 +18,94 @@
            this.response = json;
            for (i in response) {
               var repo = response[i];
+            //   var columns = document.createElement("div");
+            //   columns.setAttribute('class', 'columns portfolio-item');
+
+            //   var itemWrap = document.createElement("div");
+            //   itemWrap.setAttribute('class','item-wrap');
+              
+            //   var link = document.createElement("a");
+            //   link.setAttribute('href', repo.html_url);
+            //   link.setAttribute('target', '_blank');
+            //   itemWrap.appendChild(link);
+
+            //   var image = document.createElement("div");
+            //   //image.setAttribute('id', 'portfolio-image');
+            //   image.style.maxWidth = "100%";
+            //   image.style.height = "auth";
+            //   image.style.backgroundImage = "url('images/portfolio/gifs/IMC.gif')";
+            //   image.style.backgroundRepeat = "no-repeat";
+            //   image.style.backgroundSize = "contain";
+            //   image.style.backgroundPosition = "center";
+            //   link.appendChild(image);
+
+            //    var image = document.createElement("img");
+            //    image.setAttribute('src', 'images/portfolio/swift.png');
+            //    link.appendChild(image);
+
+            //   var overlay = document.createElement("div");
+            //   overlay.setAttribute('class', 'overlay');
+            //   link.appendChild(overlay);
+
+            //   var portfolioItem = document.createElement("div");
+            //   portfolioItem.setAttribute('class', 'portfolio-item-meta');
+            //   overlay.appendChild(portfolioItem);
+
+            //   var description = document.createElement("p");
+            //   description.innerHTML = repo.description;
+            //   portfolioItem.appendChild(description);
+
+            //   var linkIcon = document.createElement("div");
+            //   linkIcon.setAttribute('class', 'link-icon');
+            //   var icon = document.createElement("i");
+            //   icon.setAttribute('class', 'icon-plus');
+            //   linkIcon.appendChild(icon);
+            //   link.appendChild(linkIcon);
+
+            //   var h5 = document.createElement("h5");
+            //   h5.setAttribute('id', repo.language.toLowerCase() + '-item-title');
+            //   h5.innerHTML = repo.name;
+            //   link.appendChild(h5);
+
+            //   columns.appendChild(itemWrap);
+
+            //<div id="portfolio-image"></div>
+
+            //<img src="images/portfolio/gifs/${repo.name}.gif" onerror="javascript:this.src='images/portfolio/${repo.language.toLowerCase()}.png'" style="
+
               var div = document.createElement("div");
               div.innerHTML = `
               <div class="columns portfolio-item">
                  <div class="item-wrap">
                     <a href="${repo.html_url}" target="_blank">
-                    <img alt="HTML" src="images/portfolio/${repo.language.toLowerCase()}.png">
-                    <div class="overlay">
-                    <div class="portfolio-item-meta">
-                       <p>${repo.description}</p>
-                    </div>
-                    </div>
-                    <div class="link-icon"><i class="icon-plus"></i></div>
-                    <h5 id="${repo.language.toLowerCase()}-item-title">${repo.name}</h5>
+                    <img width="242" height="363" class="contain" src="images/portfolio/gifs/${repo.name}.gif" onerror="javascript:this.src='images/portfolio/${repo.language.toLowerCase()}.png'"/>
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+                              <p>${repo.description}</p>
+                           </div>
+                        </div>
+                     <div class="link-icon"><i class="icon-plus"></i></div>
+                     <h5 id="${repo.language.toLowerCase()}-item-title">${repo.name}</h5>
                     </a>
                  </div>
               </div>
               `;
+
+            //   var image = new Image(); 
+            //   var url_image = "images/portfolio/gifs/" + repo.name + ".gif"; 
+            //   image.src = url_image;
+
+            //   document.getElementById('portfolio-image').style.backgroundImage = "url('../images/portfolio/swift.png')";
+            // document.getElementById('portfolio-image').innerHTML = "Hello World"
+
+            //   if (image.width == 0) {
+            //    //   url_image = "images/portfolio/" + repo.language.toLowerCase() + ".png"
+            //    url_image = "images/portfolio/swift.png"
+            //      document.getElementById('portfolio-image').style.backgroundImage = 'url(' + url_image + ')';
+            //    } else {
+            //       url_image = "images/portfolio/gifs/"+ repo.name + ".gif"; 
+            //       document.getElementById('portfolio-image').style.backgroundImage = 'url(' + url_image + ')';
+            //    }
               document.getElementById('portfolio-wrapper').appendChild(div);
            }
        })

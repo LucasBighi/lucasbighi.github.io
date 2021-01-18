@@ -215,6 +215,17 @@ ul#nav li a:hover {
 	margin-top: 16px;
 }
 
+.contain {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+
+#javascript-item-title {
+  text-align: center;
+  border-bottom: 3px solid #f1e05a;
+}
+
 #swift-item-title {
   text-align: center;
   border-bottom: 3px solid #ffac45;

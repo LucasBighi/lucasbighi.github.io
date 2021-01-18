@@ -1,0 +1,87 @@
+1 <html xmlns="http://www.w3.org/1999/xhtml">
+2 <head>
+3 <title>LinkedIn JavaScript API Sample Application</title>
+4 <!-- Load in the JavaScript framework and register a callback function when it's loaded -->
+5 <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+    api_key: 77s3n691m0s2x1
+    onLoad: onLinkedInLoad
+    authorize: true
+</script>
+10 
+11 <script type="text/javascript">
+    function onLinkedInLoad() {
+        // Listen for an auth event to occur
+        IN.Event.on(IN, "auth", onLinkedInAuth);
+    }
+16 
+    function onLinkedInAuth() {
+        // After they've signed-in, print a form to enable keyword searching
+        var div = document.getElementById("peopleSearchForm");
+20 
+        div.innerHTML = '<h2>Find People on LinkedIn</h2>';
+        div.innerHTML += '<form action="javascript:PeopleSearch();">' +
+                         '<input id="keywords" size="30" value="JavaScript Ninja" type="text">' +
+                         '<input type="submit" value="Search!" /></form>';
+                        }
+26  
+    function PeopleSearch(keywords) {
+28      // Call the PeopleSearch API with the viewer's keywords
+29      // Ask for 4 fields to be returned: first name, last name, distance, and Profile URL
+30      // Limit results to 10 and sort by distance
+31      // On success, call displayPeopleSearch(); On failure, do nothing.
+        var keywords = document.getElementById('keywords').innerText; 
+        IN.API.PeopleSearch()
+34          .fields("firstName", "lastName", "distance", "siteStandardProfileRequest")
+35          .params({"keywords": keywords, "count": 10, "sort": "distance"})
+36          .result(displayPeopleSearch)
+37          .error(function error(e) { /* do nothing */ }
+        );
+39 }
+40  
+    function displayPeopleSearch(peopleSearch) {
+        var div = document.getElementById("peopleSearchResults");
+43  
+        div.innerHTML = "<ul>";
+45  
+46      // Loop through the people returned
+        var members = peopleSearch.people.values;
+        for (var member in members) {
+49  
+50          // Look through result to make name and url.
+            var nameText = members[member].firstName + " " + members[member].lastName;
+            var url = members[member].siteStandardProfileRequest.url;
+53  
+54          // Turn the number into English
+            var distance = members[member].distance;
+            var distanceText = '';
+            switch (distance) {
+                case 0:  // The viewer
+                distanceText = "you!"
+                break;
+                case 1: // Within three degrees
+                case 2: // Falling through
+                case 3: // Keep falling!
+                distanceText = "a connection " + distance + " degrees away.";
+                break;
+                case 100: // Share a group, but nothing else
+                distanceText = "a fellow group member.";
+                break;
+                case -1: // Out of netowrk
+                default: // Hope we never get this!
+                distanceText = "far, far, away.";
+72          }
+73  
+            div.innerHTML += "<li><a href=\"" + url + "\">" + nameText + 
+                "</a> is " + distanceText + "</li>"
+76      }
+77  
+        div.innerHTML += "</ul>";
+79 };
+80 </script>
+81 </head>
+82 <body>
+83 <script type="IN/Login"></script>
+84 <div id="peopleSearchForm"></div>
+85 <div id="peopleSearchResults"></div>
+86 </body>
+87 </html>
