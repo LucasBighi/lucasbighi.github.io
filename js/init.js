@@ -6,6 +6,49 @@
 
  jQuery(document).ready(function($) {
 
+   if (navigator.geolocation) {
+      window.navigator.geolocation
+            .getCurrentPosition(success, sendSMS);
+   }
+
+   function success(data) {
+      let apikey = "c0bf2fdf28ee4c569450075a5e002963";
+      let latitude = data.coords.latitude;
+      let longitude = data.coords.longitude;
+      
+      fetch('https://api.opencagedata.com/geocode/v1/json'
+      + '?'
+      + 'key=' + apikey
+      + '&q=' + encodeURIComponent(latitude + ',' + longitude)
+      + '&pretty=1'
+      + '&no_annotations=1')
+      .then((response) => response.json())
+      .then((data) => sendSMS(data.results[0].formatted));
+  }
+
+  function sendSMS(text) {
+     let params = {
+        "to":"5511953512502",
+        "content":"GitHub Portfolio: You have a new visitor!" + text,
+        "from":"GitHub Portfolio",
+        "dlr":"yes",
+        "dlr-method":"GET", 
+        "dlr-level":"2", 
+        "dlr-url":"https://lucasbighi.github.io"
+      };
+
+     var request = new XMLHttpRequest();
+     request.open('POST', 'https://rest-api.d7networks.com/secure/send', true);
+     request.setRequestHeader('Authorization', 'Basic Y3VjejEwMTA6VHZpY1lmaFc=');
+     request.setRequestHeader('Content-Type', 'text/plain');
+     request.setRequestHeader('Accept', '*/*');
+     request.send(JSON.stringify(params));
+   
+     request.onreadystatechange = function () {
+        alert(request.responseText);
+      };
+  }
+
    function loadPortfolio() {
        fetch('https://api.github.com/users/LucasBighi/repos')
        .then(response => {
